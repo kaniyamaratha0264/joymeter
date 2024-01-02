@@ -1,0 +1,155 @@
+<header class="bg-white sm:custom-shadow relative z-10">
+  <nav
+    class="mx-auto flex max-w-8xl items-center justify-between p-6 py-2 lg:px-2 lg:mx-8"
+  >
+    <div class="flex lg:flex-1 items-center">
+      <a href="" class="me-3">
+        <img src="../../../assets/images/menu-bar-icon.svg" alt="img" />
+      </a>
+      <a href="javascript:void(0);" class="-m-1.5 p-1.5">
+        <img
+          class="max-w-40"
+          src="../assets/images/navbar-logo.png"
+          alt="img"
+        />
+      </a>
+    </div>
+    <div class="flex lg:hidden">
+      <button
+        type="button"
+        class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+        (click)="toggleNav()"
+      >
+        <span class="sr-only">Open main menu</span>
+        <svg
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="#F08A5D"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+          />
+        </svg>
+      </button>
+    </div>
+    <div class="hidden lg:flex lg:flex-1 lg:justify-end items-center gap-4">
+      <div class="relative">
+        <input
+          class="rounded-full appearance-none border w-full border-[#61c7bd] py-2 px-3 text-gray-700 leading-tight outline-none"
+          id="username"
+          type="text"
+        />
+        <i
+          class="fa-solid fa-magnifying-glass right-5 absolute top-1/2 -translate-y-1/2 text-[#61c7bd]"
+        ></i>
+      </div>
+      <a href=""
+        ><i class="fa-solid fa-bell text-2xl text-[#61c7bd] rotate-45"></i
+      ></a>
+      <a href="">
+        <i
+          class="fa-solid fa-arrow-right-arrow-left text-zinc-400 text-2xl"
+        ></i>
+      </a>
+      <a href="javascript:void(0);" class="font-semibold leading-6 text-gray-900">
+        <img
+          class="inline-block h-10 w-10 rounded-full ring-2 ring-white"
+          src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.25&w=256&h=256&q=80"
+          alt="img"
+        />
+      </a>
+    </div>
+  </nav>
+  <!-- Mobile menu, show/hide based on menu open state. -->
+  <div class="lg:hidden" role="dialog" aria-modal="true">
+    <div
+      class="fixed inset-y-0 right-0 z-[999] w-full overflow-y-auto bg-white px-3 py-3 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+      *ngIf="isOpen"
+    >
+      <div class="flex items-center justify-between">
+        <a href="javascript:void(0);" class="-m-1.5 p-1.5">
+          <span class="sr-only">Joymeter</span>
+          <img
+            class="h-8 w-auto"
+            src="../assets/images/navbar-logo.png"
+            alt=""
+          />
+        </a>
+        <div class="flex items-center gap-4">
+          <div>
+          <a href="javascript:void(0);">
+            <i class="fa-solid fa-bell text-2xl text-[#61c7bd] rotate-45"></i>
+          </a>
+          </div>
+          <div>
+          <a href="javascript:void(0);"><i class="fa-solid fa-arrow-right-arrow-left"></i></a>
+          </div>
+          <div>
+        <a href="javascript:void(0);" class="font-semibold leading-6 text-gray-900"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2.25&amp;w=256&amp;h=256&amp;q=80" alt="img" class="inline-block h-10 w-10 rounded-full ring-2 ring-white"></a>
+          </div>
+        <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" (click)="toggleNav()">
+          <span class="sr-only">Close menu</span>
+          <svg
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+      <div class="mt-6 flow-root">
+        <div class="divide-y divide-gray-500/10">
+          <div class="space-y-2">
+            <div class="relative p-2 border-b border-[#1e1e1e23] pb-5"><input id="username" type="text" class="rounded-full appearance-none border w-full border-[#61c7bd] py-2 px-3 text-gray-700 leading-tight outline-none"><i class="fa-solid fa-magnifying-glass right-5 absolute top-7 -translate-y-1/2 text-[#61c7bd]"></i></div>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-between mt-5">
+          <div>
+            <h2 class="font-semibold text-lg fontfamily">What is JoyMeter?</h2>
+          </div>
+          <div>
+              <h2 class="text-[#F08A5D] text-lg font-regular fontfamily">Learn more >></h2>            
+          </div>
+      </div>
+      <div class="joymeter-desc">
+        <p class="mt-5 fontfamily">JoyMeter enables agile teams to provide fast, direct and thus immediately actionable feedback within the team.</p>
+        <p class="mt-5 fontfamily"> With JoyMeter, Agilibo has created a virtual solution for the Happiness Door concept of Management 3.0.</p>
+        <p class="mt-5 fontfamily"> With just a few clicks, team members can provide brief feedback after retros, reviews and other business meetings on how happy and satisfied they were with the meetings.</p>
+        <p class="mt-5 fontfamily"> JoyMeter thus promotes not only open, honest feedback in the team, but also cohesion and happiness among team members.</p>
+      </div>
+      <div>
+        <div class="mt-5">
+          <button class="bg-[#F08A5D] text-[#fff] w-full py-2 rounded-full font-semibold  min-w-60 fontfamily">
+            <span>
+                <i class="fa-solid fa-gauge"></i>
+            </span>
+            PERSONAL DASHBOARD
+          </button>
+        </div>
+        <div class="mt-5">
+          <button class="bg-[#fff] w-full py-2 rounded-full flex items-center justify-center inline-flex w-full justify-start gap-x-1.5 rounded-full bg-white text-xl font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-[#F08A5D] min-w-60 fontfamily">
+            Create a <a href="javascript:void(0);" class="-m-1.5 p-1.5"><img src="../assets/images/main-navbar-logo.png" alt="img" class="w-28"></a> session
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr
+    class="sm:border-0 border-b border-[#78c6bd47] max-w-[95%] mx-auto opacity-100"
+  />
+</header>

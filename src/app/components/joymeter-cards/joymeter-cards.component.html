@@ -1,0 +1,257 @@
+<div *ngIf="!isMobile">
+  <div
+    class="rounded-[20px] min-h-80 relative hidden md:block"
+    [ngClass]="{
+      'bg-[#FFF2F0]': review.type === 'n',
+      'bg-[#EBFAF8]': review.type === 'vp',
+      'bg-[#FFFAEF]': review.type === 'p'
+    }"
+  >
+    <div class="px-2">
+      <div class="flex items-center justify-between pt-2">
+        <img
+          src="../../../assets/images/user.png"
+          alt="img"
+          class="w-20 h-20 max-[1050px]:w-12 object-contain"
+        />
+        <div class="">
+          <div class="flex items-start justify-between me-1">
+            <div class="mr-5 text-end">
+              <ng-container *ngIf="review.type === 'n'">
+                <img
+                  class="inline-block h-10 w-10 rounded-full ring-2 ring-white"
+                  src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.25&w=256&h=256&q=80"
+                  alt="img"
+                />
+              </ng-container>
+              <ng-container *ngIf="review.type === 'vp'">
+                <img
+                  class="inline-block h-10 w-10 rounded-full ring-2 ring-white"
+                  src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.25&w=256&h=256&q=80"
+                  alt="img"
+                />
+              </ng-container>
+              <ng-container *ngIf="review.type === 'p'">
+                <img
+                  class="inline-block h-10 w-10 rounded-full ring-2 ring-white"
+                  src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.25&w=256&h=256&q=80"
+                  alt="img"
+                />
+              </ng-container>
+
+              <div class="mt-1">
+                <p class="text-[13px] text-[#1E1E1E] font-semibold">
+                  {{ review.name }}
+                </p>
+                <span
+                  class="text-[13px] text-[#1E1E1E] opacity-50 -mt-[2px] block"
+                  >{{ review.team }}</span
+                >
+              </div>
+            </div>
+            <div class="relative">
+              <button (click)="isDropdownOpen = !isDropdownOpen">
+                <i
+                  class="fa-solid fa-ellipsis-vertical text-3xl text-[#F08A5D]"
+                ></i>
+              </button>
+
+              <div
+                *ngIf="isDropdownOpen"
+                class="absolute custom-shadow right-0 z-10 mt-2 w-36 origin-top-right rounded-[10px] bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                role="menu"
+                aria-orientation="vertical"
+                aria-labelledby="menu-button"
+                tabindex="-1"
+              >
+                <div class="py-1" role="none">
+                  <a
+                    href="#"
+                    class="text-[#F08A5D] block px-4 py-2 text-[15px]"
+                    role="menuitem"
+                    tabindex="-1"
+                    id="menu-item-0"
+                    ><i class="fa-solid fa-share-nodes text-lg me-1"></i>
+                    Share</a
+                  >
+                  <a
+                    href="#"
+                    class="text-[#F08A5D] block px-4 py-2 text-[15px] border-t border[#707070]"
+                    role="menuitem"
+                    tabindex="-1"
+                    id="menu-item-0"
+                    ><i class="fa-regular fa-trash-can text-lg me-1"></i>
+                    Remove</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p
+        class="text-[27px] feedback-card"
+        [ngClass]="{
+                  'text-[#D50303]': review.type === 'n',
+                  'text-[#00B8A9]': review.type === 'vp',
+                  'text-[#D6B033]': review.type === 'p',
+              }"
+      >
+        {{ review.feedback }}
+      </p>
+      <p
+        class="text-[#1E1E1E] text-[13px] decoration-dashed underline decoration-slate-400 underline-offset-4 mb-3"
+      >
+        {{ review.desc }}
+      </p>
+    </div>
+
+    <ng-container *ngIf="review.type === 'n'">
+      <img
+        src="../../../assets/images/shape.png"
+        alt="img"
+        class="w-full absolute bottom-0"
+      />
+    </ng-container>
+    <ng-container *ngIf="review.type === 'vp'">
+      <img
+        src="../../../assets/images/happy-shape.png"
+        alt="img"
+        class="w-full absolute bottom-0"
+      />
+    </ng-container>
+    <ng-container *ngIf="review.type === 'p'">
+      <img
+        src="../../../assets/images/positive-shape.png"
+        alt="img"
+        class="w-full absolute bottom-0"
+      />
+    </ng-container>
+  </div>
+</div>
+<div *ngIf="isMobile">
+  <div class="rounded-[20px] relative" [ngClass]="{
+    'bg-[#FFF2F0]': review.type === 'n',
+    'bg-[#EBFAF8]': review.type === 'vp',
+    'bg-[#FFFAEF]': review.type === 'p'
+  }">
+    <div class="px-2">
+      <div class="flex items-center justify-between pt-2">
+        <div class="flex gap-1 items-center">
+          <ng-container *ngIf="review.type === 'n'">
+            <img
+              class="inline-block h-10 w-10 rounded-full ring-2 ring-white"
+              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.25&w=256&h=256&q=80"
+              alt="img"
+            />
+          </ng-container>
+          <ng-container *ngIf="review.type === 'vp'">
+            <img
+              class="inline-block h-10 w-10 rounded-full ring-2 ring-white"
+              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.25&w=256&h=256&q=80"
+              alt="img"
+            />
+          </ng-container>
+          <ng-container *ngIf="review.type === 'p'">
+            <img
+              class="inline-block h-10 w-10 rounded-full ring-2 ring-white"
+              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.25&w=256&h=256&q=80"
+              alt="img"
+            />
+          </ng-container>
+          <div class="mt-1">
+            <p class="text-[13px] text-[#1E1E1E] font-semibold">
+              {{ review.name }}
+            </p>
+            <span
+              class="text-[13px] text-[#1E1E1E] opacity-50 -mt-[2px] block"
+              >{{ review.team }}</span
+            >
+          </div>
+        </div>
+        <div class="flex items-center justify-between me-1">
+          <img
+            src="../../../assets/images/user.png"
+            alt="img"
+            class="w-16 object-contain"
+          />
+          <div class="relative">
+            <button (click)="isDropdownOpen = !isDropdownOpen">
+              <i
+                class="fa-solid fa-ellipsis-vertical text-3xl text-[#F08A5D]"
+              ></i>
+            </button>
+
+            <div
+              *ngIf="isDropdownOpen"
+              class="absolute custom-shadow right-0 z-10 mt-2 w-36 origin-top-right rounded-[10px] bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+              role="menu"
+              aria-orientation="vertical"
+              aria-labelledby="menu-button"
+              tabindex="-1"
+            >
+              <div class="py-1" role="none">
+                <a
+                  href="#"
+                  class="text-[#F08A5D] block px-4 py-2 text-[15px]"
+                  role="menuitem"
+                  tabindex="-1"
+                  id="menu-item-0"
+                  ><i
+                    class="fa-solid fa-share-nodes text-lg me-1"
+                  ></i>
+                  Share</a
+                >
+                <a
+                  href="#"
+                  class="text-[#F08A5D] block px-4 py-2 text-[15px] border-t border[#707070]"
+                  role="menuitem"
+                  tabindex="-1"
+                  id="menu-item-0"
+                  ><i
+                    class="fa-regular fa-trash-can text-lg me-1"
+                  ></i>
+                  Remove</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="text-[27px] feedback-card" [ngClass]="{
+        'text-[#D50303]': review.type === 'n',
+        'text-[#00B8A9]': review.type === 'vp',
+        'text-[#D6B033]': review.type === 'p',
+    }"
+>
+{{ review.feedback }}
+      </p>
+      <p
+        class="text-[#1E1E1E] text-[13px] decoration-dashed underline decoration-slate-400 underline-offset-4 mb-3"
+      >
+      {{ review.desc }}
+      </p>
+    </div>
+    <ng-container *ngIf="review.type === 'n'">
+      <img
+        src="../../../assets/images/shape.png"
+        alt="img"
+        class="w-full"
+      />
+    </ng-container>
+    <ng-container *ngIf="review.type === 'vp'">
+      <img
+        src="../../../assets/images/happy-shape.png"
+        alt="img"
+        class="w-full"
+      />
+    </ng-container>
+    <ng-container *ngIf="review.type === 'p'">
+      <img
+        src="../../../assets/images/positive-shape.png"
+        alt="img"
+        class="w-full"
+      />
+    </ng-container>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cute+Font&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+  font-family: 'Baloo Bhaina 2' 'Roboto', sans-serif;
+}
+ngb-datepicker {
+  z-index: 1 !important;
+  background: #F08A5D !important;
+}
+ngb-popover-window {
+  z-index: 1 !important;
+  background: #F08A5D !important;
+}
